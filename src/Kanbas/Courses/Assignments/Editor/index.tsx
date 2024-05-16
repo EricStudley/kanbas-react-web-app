@@ -9,7 +9,12 @@ export default function AssignmentEditor() {
             <br />
             <textarea id="wd-description" style={{ width: "100%" }}>
                 The assignment is available online. Submit a link to the landing
-                page.
+                page of your Web application running on Netlify. The landing
+                page should include the following: Your full name and section,
+                Links to each of the lab assignments, Link to the Kanbas
+                application, Links to all relevant source code repositories. The
+                Kanbas application should include a link to navigate back to the
+                landing page.
             </textarea>
             <br />
             <br />

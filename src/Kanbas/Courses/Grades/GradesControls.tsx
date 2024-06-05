@@ -12,7 +12,7 @@ export default function ModulesControls() {
                 id="wd-add-module-btn"
                 className="btn btn-lg btn-secondary me-3 float-end"
             >
-                <MdSettings 
+                <MdSettings
                     className="position-relative fs-4"
                     style={{ bottom: "1px" }}
                 />
@@ -24,10 +24,7 @@ export default function ModulesControls() {
                     type="button"
                     data-bs-toggle="dropdown"
                 >
-                    <LiaFileExportSolid  className="fs-4"/>
-                    {" "}
-                    Export
-                    {" "}
+                    <LiaFileExportSolid className="fs-4" /> Export{" "}
                 </button>
                 <ul className="dropdown-menu">
                     <li>
@@ -54,9 +51,7 @@ export default function ModulesControls() {
                 id="wd-view-progress"
                 className="btn btn-lg btn-light me-3 float-end"
             >
-                <LiaFileImportSolid className="fs-4"/>
-                {" "}
-                Import
+                <LiaFileImportSolid className="fs-4" /> Import
             </button>
         </div>
     );

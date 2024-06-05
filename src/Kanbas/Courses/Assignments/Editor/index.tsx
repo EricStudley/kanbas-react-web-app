@@ -8,11 +8,7 @@ export default function AssignmentEditor() {
                     <label htmlFor="wd-name">Assignment Name</label>
                     <br />
                     <br />
-                    <input
-                        id="wd-name"
-                        value="A1 - ENV + HTML"
-                        className="form-control"
-                    />
+                    <input id="wd-name" value="A1" className="form-control" />
                 </div>
             </div>
             <br />
@@ -32,7 +28,7 @@ export default function AssignmentEditor() {
             <br />
             <br />
             <div className="row">
-                <label htmlFor="wd-points" className="col">
+                <label htmlFor="wd-points" className="col text-end">
                     Points
                 </label>
                 <input
@@ -43,7 +39,7 @@ export default function AssignmentEditor() {
             </div>
             <br />
             <div className="row">
-                <label htmlFor="wd-group" className="col">
+                <label htmlFor="wd-group" className="col text-end">
                     Assignment Group
                 </label>
                 <select id="wd-group" className="form-control col">
@@ -57,7 +53,7 @@ export default function AssignmentEditor() {
             </div>
             <br />
             <div className="row">
-                <label htmlFor="wd-display-grade-as" className="col">
+                <label htmlFor="wd-display-grade-as" className="col text-end">
                     Display Grade as
                 </label>
                 <select id="wd-display-grade-as" className="form-control col">
@@ -69,7 +65,7 @@ export default function AssignmentEditor() {
             </div>
             <br />
             <div className="row">
-                <label htmlFor="wd-submission-type" className="col">
+                <label htmlFor="wd-submission-type" className="col text-end">
                     Submission Type
                 </label>
                 <div
@@ -146,7 +142,7 @@ export default function AssignmentEditor() {
             <br />
             <br />
             <div className="row">
-                <div className="col">
+                <div className="col text-end">
                     <label htmlFor="wd-assign-to">Assign</label>
                 </div>
                 <div className="col">
@@ -195,7 +191,10 @@ export default function AssignmentEditor() {
                     >
                         Cancel
                     </button>
-                    <button id="wd-save" className="btn btn-primary float-end me-2">
+                    <button
+                        id="wd-save"
+                        className="btn btn-primary float-end me-2"
+                    >
                         Save
                     </button>
                 </div>

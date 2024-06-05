@@ -32,9 +32,7 @@ export default function ModulesControls() {
                             className="dropdown-item"
                             href="#"
                         >
-                            <GreenCheckmark />
-                            {" "}
-                            Publish all modules and items
+                            <GreenCheckmark /> Publish all modules and items
                         </a>
                     </li>
                     <li>
@@ -43,9 +41,7 @@ export default function ModulesControls() {
                             className="dropdown-item"
                             href="#"
                         >
-                            <GreenCheckmark />
-                            {" "}
-                            Publish modules only
+                            <GreenCheckmark /> Publish modules only
                         </a>
                     </li>
                     <li>
@@ -54,7 +50,7 @@ export default function ModulesControls() {
                             className="dropdown-item"
                             href="#"
                         >
-                        <MdDoNotDisturbAlt className="me-2 fs-5"/>
+                            <MdDoNotDisturbAlt className="me-2 fs-5" />
                             Unpublish all modules and items
                         </a>
                     </li>
@@ -64,7 +60,7 @@ export default function ModulesControls() {
                             className="dropdown-item"
                             href="#"
                         >
-                            <MdDoNotDisturbAlt className="me-2 fs-5"/>
+                            <MdDoNotDisturbAlt className="me-2 fs-5" />
                             Unpublish modules only
                         </a>
                     </li>

@@ -1,78 +1,70 @@
+import ModulesControls from "./ModulesControls";
+import ModuleControlButtons from "./ModuleControlButtons";
+import { BsGripVertical } from "react-icons/bs";
+import LessonControlButtons from "./LessonControlButtons";
+
 export default function Modules() {
     return (
-        <div>
-            <button id="wd-collapse-all">Collapse All</button>{" "}
-            <button id="wd-view-progress">View Progress</button>{" "}
-            <select id="wd-filter">
-                <option selected value="all">
-                    Publish All
-                </option>
-                <option value="completed">Publish Completed</option>
-            </select>{" "}
-            <button id="wd-add-module">+ Module</button>
-            <ul id="wd-modules">
-                <li>
-                    <div>
-                        Week 1, Lecture 1 - Course Introduction, Syllabus,
-                        Agenda
+        <div id="wd-modules">
+            <ModulesControls />
+            <br />
+            <br />
+            <br />
+            <br />
+            <ul id="wd-modules" className="list-group rounded-0">
+                <li className="wd-module list-group-item p-0 mb-5 fs-5 border-gray">
+                    <div className="wd-title p-3 ps-2 bg-secondary">
+                        <BsGripVertical className="me-2 fs-3" />
+                        Week 1<ModuleControlButtons />
                     </div>
-                    <ul>
-                        <li>
-                            <span>LEARNING OBJECTIVES</span>
-                            <ul>
-                                <li>Introduction to the course</li>
-                                <li>Learn what is Web Development</li>
-                            </ul>
+                    <ul className="wd-lessons list-group rounded-0">
+                        <li className="wd-lesson list-group-item p-3 ps-1">
+                            <BsGripVertical className="me-2 fs-3" />
+                            LEARNING OBJECTIVES
+                            <LessonControlButtons />
                         </li>
-                        <li>
-                            <span>READING</span>
-                            <ul>
-                                <li>
-                                    Full Stack Developer - Chapter 1 -
-                                    Introduction
-                                </li>
-                                <li>
-                                    Full Stack Developer - Chapter 2 - Creating
-                                    User
-                                </li>
-                            </ul>
+                        <li className="wd-lesson list-group-item p-3 ps-1">
+                            <BsGripVertical className="me-2 fs-3" />
+                            Introduction to the course
+                            <LessonControlButtons />
                         </li>
-                        <li>
-                            <span>SLIDES</span>
-                            <ul>
-                                <li>Introduction to Web Development</li>
-                                <li>Creating an HTTP server with Node.js</li>
-                                <li>Creating a React Application</li>
-                            </ul>
+                        <li className="wd-lesson list-group-item p-3 ps-1">
+                            <BsGripVertical className="me-2 fs-3" />
+                            Learn what is Web Development
+                            <LessonControlButtons />
+                        </li>
+                        <li className="wd-lesson list-group-item p-3 ps-1">
+                            <BsGripVertical className="me-2 fs-3" />
+                            LESSON 1
+                            <LessonControlButtons />
+                        </li>
+                        <li className="wd-lesson list-group-item p-3 ps-1">
+                            <BsGripVertical className="me-2 fs-3" />
+                            LESSON 2
+                            <LessonControlButtons />
                         </li>
                     </ul>
                 </li>
-                <li>
-                    <div>
-                        Week 1, Lecture 2 - Formatting User Interfaces with HTML
+                <li className="wd-module list-group-item p-0 mb-5 fs-5 border-gray">
+                    <div className="wd-title p-3 ps-2 bg-secondary">
+                        <BsGripVertical className="me-2 fs-3" />
+                        Week 2<ModuleControlButtons />
                     </div>
-                    <ul>
-                        <li>
-                            <span>LEARNING OBJECTIVES</span>
-                            <ul>
-                                <li>
-                                    Learn how to create user interfaces with
-                                    HTML
-                                </li>
-                                <li>Deploy the assignment to Netlify</li>
-                            </ul>
+                    <ul className="wd-lessons list-group rounded-0">
+                        <li className="wd-lesson list-group-item p-3 ps-1">
+                            <BsGripVertical className="me-2 fs-3" />
+                            LEARNING OBJECTIVES
+                            <LessonControlButtons />
                         </li>
-                        <li>
-                            <span>SLIDES</span>
-                            <ul>
-                                <li>Introduction to HTML and the DOM</li>
-                                <li>
-                                    Formatting Web content with Headings and
-                                </li>
-                                <li>
-                                    Formatting content with Lists and Tables
-                                </li>
-                            </ul>
+                        <li className="wd-lesson list-group-item p-3 ps-1">
+                            <BsGripVertical className="me-2 fs-3" />
+                            LESSON 1
+                            <LessonControlButtons />
+                        </li>
+                        <li className="wd-lesson list-group-item p-3 ps-1">
+                            <BsGripVertical className="me-2 fs-3" />
+                            LESSON 2
+                            <LessonControlButtons />
                         </li>
                     </ul>
                 </li>

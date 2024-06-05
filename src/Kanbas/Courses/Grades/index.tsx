@@ -60,7 +60,7 @@ export default function Grades() {
             >
                 <FiFilter className="fs-4" /> Apply Filters
             </button>
-            <div className="container mt-4">
+            <div className="mt-4">
                 <table className="table table-bordered">
                     <thead>
                         <tr>

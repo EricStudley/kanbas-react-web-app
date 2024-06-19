@@ -1,8 +1,21 @@
 import { FaSearch } from "react-icons/fa";
 import GradesControls from "./GradesControls";
 import { FiFilter } from "react-icons/fi";
+import { useParams } from "react-router";
+import * as db from "../../Database";
 
 export default function Grades() {
+    const { cid } = useParams();
+    const enrollments = db.enrollments.filter(
+        (enrollment: any) => enrollment.course === cid
+    );
+    const assignments = db.assignments.filter(
+        (assignment: any) => assignment.course === cid
+    );
+    const users = db.users.filter((user: any) =>
+        enrollments.map((enrollment: any) => enrollment.user).includes(user._id)
+    );
+    const grades = db.grades;
     return (
         <div id="wd-grades" className="ms-5">
             <br />
@@ -65,275 +78,33 @@ export default function Grades() {
                     <thead>
                         <tr>
                             <th>Student Name</th>
-                            <th>
-                                A1 SETUP <br />
-                                Out of 100
-                            </th>
-                            <th>
-                                A2 HTML <br />
-                                Out of 100
-                            </th>
-                            <th>
-                                A3 CSS <br />
-                                Out of 100
-                            </th>
-                            <th>
-                                A4 BOOTSTRAP <br />
-                                Out of 100
-                            </th>
+                            {assignments.map((assignment: any) => (
+                                <th>{assignment._id}</th>
+                            ))}
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td className="text-danger">Jane Adams</td>
-                            <td>
-                                <input
-                                    type="text"
-                                    className="form-control border-0"
-                                    value="100%"
-                                />
-                            </td>
-                            <td>
-                                <input
-                                    type="text"
-                                    className="form-control border-0"
-                                    value="96.67%"
-                                />
-                            </td>
-                            <td>
-                                <input
-                                    type="text"
-                                    className="form-control border-0"
-                                    value="92.18%"
-                                />
-                            </td>
-                            <td>
-                                <input
-                                    type="text"
-                                    className="form-control border-0"
-                                    value="66.22%"
-                                />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className="text-danger">Christina Allen</td>
-                            <td>
-                                <input
-                                    type="text"
-                                    className="form-control border-0"
-                                    value="100%"
-                                />
-                            </td>
-                            <td>
-                                <input
-                                    type="text"
-                                    className="form-control border-0"
-                                    value="100%"
-                                />
-                            </td>
-                            <td>
-                                <input
-                                    type="text"
-                                    className="form-control border-0"
-                                    value="100%"
-                                />
-                            </td>
-                            <td>
-                                <input
-                                    type="text"
-                                    className="form-control border-0"
-                                    value="100%"
-                                />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className="text-danger">Samreen Ansari</td>
-                            <td>
-                                <input
-                                    type="text"
-                                    className="form-control border-0"
-                                    value="100%"
-                                />
-                            </td>
-                            <td>
-                                <input
-                                    type="text"
-                                    className="form-control border-0"
-                                    value="100%"
-                                />
-                            </td>
-                            <td>
-                                <input
-                                    type="text"
-                                    className="form-control border-0"
-                                    value="100%"
-                                />
-                            </td>
-                            <td>
-                                <input
-                                    type="text"
-                                    className="form-control border-0"
-                                    value="100%"
-                                />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className="text-danger">Han Bao</td>
-                            <td>
-                                <input
-                                    type="text"
-                                    className="form-control border-0"
-                                    value="100%"
-                                />
-                            </td>
-                            <td>
-                                <input
-                                    type="text"
-                                    className="form-control border-0"
-                                    value="100%"
-                                />
-                            </td>
-                            <td>
-                                <input
-                                    type="text"
-                                    className="form-control border-0"
-                                    value="88.03%"
-                                />
-                            </td>
-                            <td>
-                                <input
-                                    type="text"
-                                    className="form-control border-0"
-                                    value="98.99%"
-                                />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className="text-danger">
-                                Mahi Sai Srinivas Bobbili
-                            </td>
-                            <td>
-                                <input
-                                    type="text"
-                                    className="form-control border-0"
-                                    value="100%"
-                                />
-                            </td>
-                            <td>
-                                <input
-                                    type="text"
-                                    className="form-control border-0"
-                                    value="96.67%"
-                                />
-                            </td>
-                            <td>
-                                <input
-                                    type="text"
-                                    className="form-control border-0"
-                                    value="98.37%"
-                                />
-                            </td>
-                            <td>
-                                <input
-                                    type="text"
-                                    className="form-control border-0"
-                                    value="100%"
-                                />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className="text-danger">Siran Cao</td>
-                            <td>
-                                <input
-                                    type="text"
-                                    className="form-control border-0"
-                                    value="100%"
-                                />
-                            </td>
-                            <td>
-                                <input
-                                    type="text"
-                                    className="form-control border-0"
-                                    value="100%"
-                                />
-                            </td>
-                            <td>
-                                <input
-                                    type="text"
-                                    className="form-control border-0"
-                                    value="100%"
-                                />
-                            </td>
-                            <td>
-                                <input
-                                    type="text"
-                                    className="form-control border-0"
-                                    value="100%"
-                                />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className="text-danger">Kathryn Chalmers</td>
-                            <td>
-                                <input
-                                    type="text"
-                                    className="form-control border-0"
-                                    value="100%"
-                                />
-                            </td>
-                            <td>
-                                <input
-                                    type="text"
-                                    className="form-control border-0"
-                                    value="100%"
-                                />
-                            </td>
-                            <td>
-                                <input
-                                    type="text"
-                                    className="form-control border-0"
-                                    value="98.5%"
-                                />
-                            </td>
-                            <td>
-                                <input
-                                    type="text"
-                                    className="form-control border-0"
-                                    value="100%"
-                                />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className="text-danger">Chih-Yang Chen</td>
-                            <td>
-                                <input
-                                    type="text"
-                                    className="form-control border-0"
-                                    value="100%"
-                                />
-                            </td>
-                            <td>
-                                <input
-                                    type="text"
-                                    className="form-control border-0"
-                                    value="81.67%"
-                                />
-                            </td>
-                            <td>
-                                <input
-                                    type="text"
-                                    className="form-control border-0"
-                                    value="79.93%"
-                                />
-                            </td>
-                            <td>
-                                <input
-                                    type="text"
-                                    className="form-control border-0"
-                                    value="54.46%"
-                                />
-                            </td>
-                        </tr>
+                        {users.map((user: any) => (
+                            <tr>
+                                <td className="text-danger">
+                                    {user.firstName + " " + user.lastName}
+                                </td>
+                                {grades
+                                    .filter(
+                                        (grade: any) =>
+                                            grade.student === user._id
+                                    )
+                                    .map((grade: any) => (
+                                        <td>
+                                            <input
+                                                type="text"
+                                                className="form-control border-0"
+                                                value={grade?.grade}
+                                            />
+                                        </td>
+                                    ))}
+                            </tr>
+                        ))}
                     </tbody>
                 </table>
             </div>

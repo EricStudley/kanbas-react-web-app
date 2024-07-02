@@ -4,13 +4,16 @@ import AssignmentControlButtons from "./AssignmentControlButtons";
 import { TbFilePencil } from "react-icons/tb";
 import { useParams } from "react-router";
 import { useState } from "react";
-import { addAssignment, editAssignment, updateAssignment, deleteAssignment } from "./reducer";
+import { deleteAssignment } from "./reducer";
 import { useSelector, useDispatch } from "react-redux";
+import AssignmentDeleteDialog from "./AssignmentDeleteDialog";
 
 export default function Assignments() {
+    const dispatch = useDispatch();
     const { cid } = useParams();
-    const [assignment, setAssignment] = useState("");
-    const { assignments } = useSelector((state: any) => state.assignmentsReducer);
+    const { assignments } = useSelector(
+        (state: any) => state.assignmentsReducer
+    );
     return (
         <div id="wd-assignments">
             <br />
@@ -47,11 +50,11 @@ export default function Assignments() {
                                                 textDecoration: "none",
                                             }}
                                         >
-                                            {assignment._id}
+                                            {assignment.title}
                                         </a>
                                         <br />
                                         <span style={{ color: "red" }}>
-                                            {assignment.title}
+                                            Multiple Modules
                                         </span>{" "}
                                         |{" "}
                                         <span
@@ -64,11 +67,17 @@ export default function Assignments() {
                                         </span>{" "}
                                         {assignment.available} |
                                         <br />
-                                        Due {assignment.due} | 100 pts
+                                        Due {assignment.due} |{" "}
+                                        {assignment.points} pts
                                     </div>
                                     <div className="ms-auto d-flex">
-                                        <AssignmentControlButtons />
+                                        <AssignmentControlButtons/>
                                     </div>
+                                    <AssignmentDeleteDialog
+                                        deleteAssignment={() =>
+                                            dispatch(deleteAssignment(assignment._id))
+                                        }
+                                    />
                                 </li>
                             ))}
                     </ul>

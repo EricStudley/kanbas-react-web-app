@@ -3,11 +3,14 @@ import AssignmentsControls from "./AssignmentsControls";
 import AssignmentControlButtons from "./AssignmentControlButtons";
 import { TbFilePencil } from "react-icons/tb";
 import { useParams } from "react-router";
-import * as db from "../../Database";
+import { useState } from "react";
+import { addAssignment, editAssignment, updateAssignment, deleteAssignment } from "./reducer";
+import { useSelector, useDispatch } from "react-redux";
 
 export default function Assignments() {
     const { cid } = useParams();
-    const assignments = db.assignments;
+    const [assignment, setAssignment] = useState("");
+    const { assignments } = useSelector((state: any) => state.assignmentsReducer);
     return (
         <div id="wd-assignments">
             <br />

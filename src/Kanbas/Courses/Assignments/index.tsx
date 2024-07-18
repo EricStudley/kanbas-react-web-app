@@ -3,10 +3,9 @@ import AssignmentsControls from "./AssignmentsControls";
 import AssignmentControlButtons from "./AssignmentControlButtons";
 import { TbFilePencil } from "react-icons/tb";
 import { useParams } from "react-router";
-import { useState, useEffect } from "react";
-import { deleteAssignment, setAssignments } from "./reducer";
+import { useEffect } from "react";
+import { setAssignments } from "./reducer";
 import { useSelector, useDispatch } from "react-redux";
-import AssignmentDeleteDialog from "./AssignmentDeleteDialog";
 import * as client from "./client";
 
 export default function Assignments() {
@@ -15,10 +14,6 @@ export default function Assignments() {
     const { assignments } = useSelector(
         (state: any) => state.assignmentsReducer
     );
-    const removeAssignment = async (assignmentId: string) => {
-        await client.deleteAssignment(assignmentId);
-        dispatch(deleteAssignment(assignmentId));
-    };
     const fetchAssignments = async () => {
         const assignments = await client.findAssignmentsForCourse(
             cid as string
@@ -81,13 +76,10 @@ export default function Assignments() {
                                     pts
                                 </div>
                                 <div className="ms-auto d-flex">
-                                    <AssignmentControlButtons />
+                                    <AssignmentControlButtons
+                                        assignmentId={assignment._id}
+                                    />
                                 </div>
-                                <AssignmentDeleteDialog
-                                    deleteAssignment={() =>
-                                        removeAssignment(assignment._id)
-                                    }
-                                />
                             </li>
                         ))}
                     </ul>

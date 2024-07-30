@@ -50,8 +50,8 @@ export default function Kanbas() {
         fetchCourses();
     }, []);
     return (
-        <Session>
-            <Provider store={store}>
+        <Provider store={store}>
+            <Session>
                 <div id="wd-kanbas" className="h-100">
                     <div className="d-flex h-100">
                         <div className="d-none d-md-block bg-black">
@@ -99,7 +99,7 @@ export default function Kanbas() {
                         </div>
                     </div>
                 </div>
-            </Provider>
-        </Session>
+            </Session>
+        </Provider>
     );
 }
